@@ -6,25 +6,11 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 
 const certifications = [
   {
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2023",
+    title: "AI-Powered Performance Ads Certification",
+    issuer: "Google",
+    date: "2024",
     link: "#",
-    icon: <Award className="w-6 h-6 text-orange-400" />
-  },
-  {
-    title: "Google Cloud Professional Developer",
-    issuer: "Google Cloud",
-    date: "2022",
-    link: "#",
-    icon: <Award className="w-6 h-6 text-blue-400" />
-  },
-  {
-    title: "Meta Front-End Developer",
-    issuer: "Meta",
-    date: "2022",
-    link: "#",
-    icon: <Award className="w-6 h-6 text-blue-600" />
+    icon: <Award className="w-6 h-6 text-blue-500" />
   }
 ];
 

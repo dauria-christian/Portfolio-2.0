@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "React", level: 95 },
-  { name: "Three.js", level: 85 },
+  { name: "React", level: 90 },
   { name: "Next.js", level: 90 },
-  { name: "TypeScript", level: 88 },
-  { name: "Node.js", level: 80 },
-  { name: "Tailwind", level: 95 },
+  { name: "Premiere Pro", level: 80 },
+  { name: "Canva", level: 85 },
   { name: "Figma", level: 75 },
-  { name: "AWS", level: 70 },
+  { name: "Photoshop", level: 60 },
+  { name: "Python", level: 65 },
+  { name: "HTML5/CSS3", level: 80 },
+  { name: "JavaScript", level: 80 },
+  { name: "TypeScript", level: 85 },
+  { name: "Tailwind", level: 95 },
 ];
 
 export default function TechStack() {

@@ -8,24 +8,24 @@ import { Code, Server, Smartphone, Cloud } from "lucide-react";
 export const AboutSection = () => {
     const services = [
         {
-            title: "Frontend Development",
+            title: "Sviluppo Frontend",
             icon: <Code className="w-8 h-8 text-blue-500" />,
-            description: "Building responsive and interactive user interfaces with React, Next.js, and modern CSS frameworks."
+            description: "Creazione di interfacce web responsive e moderne utilizzando React, Next.js e Tailwind CSS."
         },
         {
-            title: "Backend Engineering",
-            icon: <Server className="w-8 h-8 text-purple-500" />,
-            description: "Designing scalable APIs and server-side logic using Node.js, Python, and cloud services."
+            title: "Video Editing",
+            icon: <Server className="w-8 h-8 text-purple-500" />, // Using Server icon as placeholder or maybe find a better one if possible, but keeping consistent with imports
+            description: "Montaggio video professionale con Adobe Premiere Pro, curando narrazione e ritmo visivo."
         },
         {
-            title: "Mobile Apps",
+            title: "Marketing Digitale",
             icon: <Smartphone className="w-8 h-8 text-green-500" />,
-            description: "Creating cross-platform mobile applications that provide native-like experiences."
+            description: "Studio autonomo di strategie di vendita: follow-up, cross-selling e up-selling."
         },
         {
-            title: "Cloud Solutions",
+            title: "Design Interfacce",
             icon: <Cloud className="w-8 h-8 text-orange-500" />,
-            description: "Deploying and managing applications on AWS, Azure, and Google Cloud Platform."
+            description: "Progettazione grafica e prototipazione con Figma, Canva e Adobe Photoshop."
         }
     ];
 
@@ -54,7 +54,7 @@ export const AboutSection = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-500"
             >
-                Indipendente. Creativo. Instancabile.
+                Studente. Sviluppatore. Creativo.
             </motion.h2>
             
             <motion.p 
@@ -63,7 +63,7 @@ export const AboutSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-lg text-gray-400 leading-relaxed"
             >
-                I am a passionate Full Stack Developer with over 5 years of experience in building digital products. My journey started with a curiosity for how things work on the web, which evolved into a career crafting robust and scalable applications.
+                Mi chiamo Christian e sono uno studente del quinto anno di informatica presso l'ITT Guglielmo Marconi di Staranzano. Vivo a Monfalcone e coltivo da sempre una forte passione per il mondo digitale.
             </motion.p>
 
             <motion.p 
@@ -72,7 +72,7 @@ export const AboutSection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg text-gray-400 leading-relaxed"
             >
-                I specialize in the JavaScript ecosystem, particularly React and Node.js, but I'm always exploring new technologies to solve complex problems efficiently.
+                Oltre ad essere un Front-End Web Developer, sono un Video Editor e studio marketing autonomamente (follow-up, cross-selling, up-selling). Ho un passato sportivo nel calcio e in altre discipline, che mi hanno insegnato dedizione e lavoro di squadra.
             </motion.p>
             
             <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -7,9 +7,9 @@ import { CheckCircle2, Cloud, Code2, Database, Layout, Lightbulb, Terminal, User
 export const SkillsSection = () => {
   const hardSkills = [
     { category: "Frontend", icon: <Layout />, items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"] },
-    { category: "Backend", icon: <Database />, items: ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL", "Redis"] },
-    { category: "DevOps & Cloud", icon: <Cloud />, items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Vercel", "Linux"] },
-    { category: "Tools", icon: <Terminal />, items: ["Git", "VS Code", "Figma", "Postman", "Jest", "Webpack"] },
+    { category: "Creative", icon: <Users />, items: ["Premiere Pro", "Figma", "Canva", "Adobe Photoshop", "Video Editing", "Content Creation"] },
+    { category: "Marketing", icon: <Lightbulb />, items: ["Strategie di Vendita", "Cross-selling", "Up-selling", "Follow-up", "Social Media", "Ads"] },
+    { category: "Tools & Backend", icon: <Terminal />, items: ["Git", "VS Code", "Python", "SQL", "C++", "Node.js"] },
   ];
 
   const softSkills = [

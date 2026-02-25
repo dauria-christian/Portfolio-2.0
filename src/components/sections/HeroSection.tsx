@@ -45,21 +45,36 @@ const InteractiveButton = ({ children, primary = false }: { children: React.Reac
 export default function HeroSection() {
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center">
-      {/* 3D Background */}
+      {/* Background (Gradient or Video) */}
       <div className="absolute inset-0 z-0">
-        <ParticlesBackground />
+          {/* Default Gradient Background */}
+          <div className="absolute inset-0 bg-linear-to-br from-indigo-900 via-black to-purple-900 opacity-50" />
+          
+          {/* Video Placeholder (Commented out until video is available) */}
+          {/* 
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover opacity-30"
+          >
+            <source src="/path-to-your-video.mp4" type="video/mp4" />
+          </video> 
+          */}
       </div>
 
       {/* Overlay Gradient */}
       <div className="absolute inset-0 z-1 bg-linear-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
       
       {/* Content Container */}
-      <div className="container relative z-10 mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full">
+      <div className="container relative z-10 mx-auto px-6 h-full flex flex-col justify-center">
         
-        {/* Left Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center pt-20">
+        {/* Main Content */}
+        <div className="flex flex-col justify-center items-start text-left pt-20 max-w-4xl">
           
           {/* Status Badge */}
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,11 +90,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-6xl md:text-8xl font-bold tracking-tight mb-2 font-display"
+            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 font-display leading-tight"
           >
-            <span className="text-white">IMPATTO</span>
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400">
-              ATTRAVERSO IL CODICE
+            <span className="text-white">CHRISTIAN</span>
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400 mt-2">
+              D'AURIA
             </span>
           </motion.h1>
 
@@ -88,9 +103,9 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="text-xl md:text-2xl text-gray-400 mb-8 font-light h-10 flex items-center"
+            className="text-xl md:text-2xl text-gray-400 mb-8 font-light h-10 flex items-center justify-start gap-2"
           >
-            <span className="mr-2">Sviluppo</span>
+            <span>Sviluppo</span>
             <TypeAnimation
               sequence={[
                 'esperienze digitali',
@@ -114,7 +129,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
-            className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed font-light"
           >
             Tutti mi dicono che faccio troppe cose rispetto a quello che è effettivamente il mio tempo libero.
             Non mi definisco in un singolo ruolo, sono capace di adattarmi e svolgere più mansioni.
@@ -125,7 +140,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 justify-start"
           >
             <InteractiveButton primary>
               Vedi Progetti <ArrowRight size={20} />
@@ -136,44 +151,6 @@ export default function HeroSection() {
             </InteractiveButton>
           </motion.div>
         
-        </div>
-
-        {/* Right Content - Glass Card Info */}
-        <div className="lg:col-span-5 hidden lg:flex justify-end items-center">
-            <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.6, duration: 1 }}
-                className="w-80 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl skew-y-0 hover:skew-y-1 transition-transform duration-500 ease-out"
-            >
-                <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-6">
-                    <div className="w-16 h-16 rounded-full bg-linear-to-tr from-purple-500 to-blue-500 p-0.5">
-                         <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
-                             {/* Placeholder for Profile Img */}
-                             <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-500">IMG</div>
-                         </div>
-                    </div>
-                    <div>
-                        <h3 className="font-bold text-white">Sviluppatore Full Stack</h3>
-                        <p className="text-sm text-gray-400">@AziendaAttuale</p>
-                    </div>
-                </div>
-
-                <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-sm text-gray-300">
-                        <MapPin size={18} className="text-blue-400" />
-                        <span>Remoto / Globale</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-300">
-                        <Briefcase size={18} className="text-purple-400" />
-                        <span>5+ Anni di Esperienza</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-300">
-                        <Calendar size={18} className="text-cyan-400" />
-                        <span>Disponibile Feb 2026</span>
-                    </div>
-                </div>
-            </motion.div>
         </div>
       </div>
 

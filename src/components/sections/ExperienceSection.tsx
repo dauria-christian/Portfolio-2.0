@@ -18,28 +18,46 @@ export default function ExperienceSection() {
         <div className="max-w-4xl mx-auto space-y-12">
             {[
               {
-                role: "Senior Frontend Engineer",
-                company: "Tech Corp Inc.",
-                period: "2023 - Presente",
-                desc: "Guida della migrazione dell'architettura frontend a Next.js 14. Implementazione di un design system personalizzato utilizzato in 5 diversi prodotti. Miglioramento dei core web vitals del 40%."
+                role: "Video Editor",
+                company: "2Hustler",
+                period: "Presente",
+                desc: "Creazione contenuti video."
               },
               {
-                role: "Full Stack Developer",
-                company: "Creative Digital Agency",
-                period: "2021 - 2023",
-                desc: "Sviluppo di esperienze web immersive per clienti di alto profilo. Specializzazione in interazioni WebGL e ottimizzazione delle prestazioni."
+                role: "Video Editor",
+                company: "ComfyMC",
+                period: "Esperienza Precedente",
+                desc: "Creazione contenuti video per Tiktok."
+              },
+               {
+                role: "Video Editor",
+                company: "CoralService",
+                period: "Esperienza Precedente",
+                desc: "Creazione contenuti video per Tiktok."
               },
               {
-                role: "Sviluppatore Web Junior",
-                company: "Startup Lab",
-                period: "2019 - 2021",
-                desc: "Collaborazione con i team di design per tradurre prototipi Figma in componenti React pixel-perfect. Supporto nello sviluppo di API backend utilizzando Node.js."
+                role: "Manager",
+                company: "Hyrise Studios",
+                period: "Esperienza Precedente",
+                desc: "Gestione e coordinamento delle risorse umane. Interazione con i clienti e gestione dei progetti."
               },
               {
-                role: "Stagista Sviluppatore Software",
-                company: "Tech Innovators",
-                period: "2018 - 2019",
-                desc: "Sviluppo e manutenzione di applicazioni web interne. Partecipazione a code review e scrittura di test automatizzati per migliorare la qualità del codice."
+                role: "Front-End Web Developer",
+                company: "Comune di Monfalcone",
+                period: "Esperienza Formativa",
+                desc: "Periodo di Stage scolastico presso il Comune di Monfalcone. Sviluppo di un'interfaccia web."
+              },
+              {
+                role: "Business Strategist",
+                company: "Minefy",
+                period: "Esperienza Precedente",
+                desc: "Analisi di strategie di crescita e monetizzazione."
+              },
+              {
+                role: "Project Manager / Tutor /Aiutante Social Media",
+                company: "Titanet Studios / Titanet Labs",
+                period: "Esperienza Precedente",
+                desc: "Coordinamento progetti creativi, addetto vendita e gestione risorse umane. Supporto alla gestione dei canali social e coordinamento progetti"
               }
             ].map((item, index) => (
                 <div key={index} className="relative pl-8 border-l border-white/10">
