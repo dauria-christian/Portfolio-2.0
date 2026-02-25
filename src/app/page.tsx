@@ -8,6 +8,7 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import ProjectsSection from "@/components/sections/ProjectsSection"; 
 import ContactSection from "@/components/sections/ContactSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
+import CertificationsSection from "@/components/sections/CertificationsSection";
 
 export default function Home() {
   return (
@@ -24,6 +25,8 @@ export default function Home() {
       
       {/* Existing Sections for Content Completeness */}
       <ExperienceSection />
+      
+      <CertificationsSection />
       
       <ProjectsSection />
 

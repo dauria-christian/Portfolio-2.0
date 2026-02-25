@@ -6,26 +6,26 @@ import { Search, PenTool, Code, Send } from "lucide-react";
 const steps = [
   {
     id: 1,
-    title: "Discover",
-    description: "I dive deep into your goals, target audience, and competitive landscape to find the perfect strategy.",
+    title: "Scoperta",
+    description: "Analizzo a fondo i tuoi obiettivi, il pubblico di destinazione e il panorama competitivo per trovare la strategia perfetta.",
     icon: Search,
   },
   {
     id: 2,
     title: "Design",
-    description: "Crafting intuitive UIs and engaging experiences that align with your brand identity.",
+    description: "Creazione di interfacce utente intuitive ed esperienze coinvolgenti in linea con l'identità del tuo brand.",
     icon: PenTool,
   },
   {
     id: 3,
-    title: "Develop",
-    description: "Writing clean, scalable code using modern frameworks to bring the vision to life.",
+    title: "Sviluppo",
+    description: "Scrittura di codice pulito e scalabile utilizzando framework moderni per dare vita alla visione.",
     icon: Code,
   },
   {
     id: 4,
-    title: "Deliver",
-    description: "Rigorous testing, deployment, and post-launch support to ensure a flawless takeoff.",
+    title: "Consegna",
+    description: "Test rigorosi, deployment e supporto post-lancio per garantire un decollo impeccabile.",
     icon: Send,
   },
 ];
@@ -34,7 +34,7 @@ export default function ProcessSection() {
   return (
     <section className="py-32 bg-black relative">
        {/* Connecting Line */}
-       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent hidden lg:block -translate-y-1/2 z-0" />
+       <div className="absolute top-1/2 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent hidden lg:block -translate-y-1/2 z-0" />
 
        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -42,9 +42,9 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">My Workflow</h2>
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Il Mio Flusso di Lavoro</h2>
              <p className="text-gray-400 max-w-2xl mx-auto">
-               A structured approach to chaos. From an idea to a polished product.
+               Un approccio strutturato al caos. Da un'idea a un prodotto finito.
              </p>
           </motion.div>
 

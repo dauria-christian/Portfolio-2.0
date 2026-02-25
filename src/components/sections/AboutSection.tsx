@@ -37,7 +37,7 @@ export const AboutSection = () => {
             <TiltCard className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto relative glass p-2">
                 <div className="w-full h-full bg-gray-800 rounded-xl overflow-hidden relative group">
                     {/* Placeholder for Profile Image */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-purple-600/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
                     <img 
                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
                         alt="Profile" 
@@ -52,9 +52,9 @@ export const AboutSection = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500"
+                className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-500"
             >
-                About Me
+                Indipendente. Creativo. Instancabile.
             </motion.h2>
             
             <motion.p 

@@ -12,16 +12,16 @@ export default function ContactSection() {
            whileInView={{ opacity: 1, y: 0 }}
            className="max-w-2xl mx-auto"
         >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's create something extraordinary</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Creiamo qualcosa di straordinario</h2>
             <p className="text-gray-400 text-lg mb-10">
-                Whether you have an idea for a project or just want to chat, feel free to shoot me an email!
+                Che tu abbia un'idea per un progetto o voglia solo fare due chiacchiere, sentiti libero di inviarmi un'email!
             </p>
 
             <a 
               href="mailto:contact@email.com"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-colors mb-16"
             >
-                <Mail size={20} /> Say Hello
+                <Mail size={20} /> Ciao
             </a>
 
             <div className="flex justify-center gap-8">

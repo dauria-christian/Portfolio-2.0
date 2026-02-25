@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AnimatedShape from "../3d/AnimatedShape";
+import { ParticlesBackground } from "../3d/ParticlesBackground";
 import { ArrowRight, Download, MapPin, Briefcase, Calendar } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { useRef, useState } from "react";
@@ -47,11 +47,11 @@ export default function HeroSection() {
     <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
-        <AnimatedShape />
+        <ParticlesBackground />
       </div>
 
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-1 bg-linear-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
       
       {/* Content Container */}
       <div className="container relative z-10 mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full">
@@ -67,7 +67,7 @@ export default function HeroSection() {
             className="w-fit mb-6 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-2"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-gray-300 font-mono">Available for projects</span>
+            <span className="text-sm text-gray-300 font-mono">Disponibile per progetti</span>
           </motion.div>
 
           {/* Main Title with Gradient */}
@@ -77,9 +77,9 @@ export default function HeroSection() {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-6xl md:text-8xl font-bold tracking-tight mb-2 font-display"
           >
-            <span className="text-white">IMPACT</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400">
-              THROUGH CODE
+            <span className="text-white">IMPATTO</span>
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400">
+              ATTRAVERSO IL CODICE
             </span>
           </motion.h1>
 
@@ -88,18 +88,18 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="text-xl md:text-2xl text-gray-400 mb-8 font-light h-[40px] flex items-center"
+            className="text-xl md:text-2xl text-gray-400 mb-8 font-light h-10 flex items-center"
           >
-            <span className="mr-2">I build</span>
+            <span className="mr-2">Sviluppo</span>
             <TypeAnimation
               sequence={[
-                'digital experiences',
+                'esperienze digitali',
                 2000,
-                'interactive worlds',
+                'mondi interattivi',
                 2000,
-                'mobile apps',
+                'app mobile',
                 2000,
-                'scalable systems',
+                'sistemi scalabili',
                 2000,
               ]}
               wrapper="span"
@@ -116,8 +116,8 @@ export default function HeroSection() {
             transition={{ delay: 1.2 }}
             className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed"
           >
-            Crafting immersive web experiences that blend art, technology, and human interaction.
-            Focusing on performance, accessibility, and cutting-edge design.
+            Tutti mi dicono che faccio troppe cose rispetto a quello che è effettivamente il mio tempo libero.
+            Non mi definisco in un singolo ruolo, sono capace di adattarmi e svolgere più mansioni.
           </motion.p>
 
           {/* Buttons */}
@@ -128,11 +128,11 @@ export default function HeroSection() {
             className="flex flex-wrap gap-4"
           >
             <InteractiveButton primary>
-              View Projects <ArrowRight size={20} />
+              Vedi Progetti <ArrowRight size={20} />
             </InteractiveButton>
             
             <InteractiveButton>
-              Download CV <Download size={20} />
+              Scarica CV <Download size={20} />
             </InteractiveButton>
           </motion.div>
         
@@ -147,30 +147,30 @@ export default function HeroSection() {
                 className="w-80 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl skew-y-0 hover:skew-y-1 transition-transform duration-500 ease-out"
             >
                 <div className="flex items-center gap-4 mb-6 border-b border-white/10 pb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 p-[2px]">
+                    <div className="w-16 h-16 rounded-full bg-linear-to-tr from-purple-500 to-blue-500 p-0.5">
                          <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
                              {/* Placeholder for Profile Img */}
                              <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-500">IMG</div>
                          </div>
                     </div>
                     <div>
-                        <h3 className="font-bold text-white">Full Stack Dev</h3>
-                        <p className="text-sm text-gray-400">@CurrentCompany</p>
+                        <h3 className="font-bold text-white">Sviluppatore Full Stack</h3>
+                        <p className="text-sm text-gray-400">@AziendaAttuale</p>
                     </div>
                 </div>
 
                 <div className="space-y-4">
                     <div className="flex items-center gap-3 text-sm text-gray-300">
                         <MapPin size={18} className="text-blue-400" />
-                        <span>Remote / Worldwide</span>
+                        <span>Remoto / Globale</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-300">
                         <Briefcase size={18} className="text-purple-400" />
-                        <span>5+ Years Experience</span>
+                        <span>5+ Anni di Esperienza</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-gray-300">
                         <Calendar size={18} className="text-cyan-400" />
-                        <span>Available Feb 2026</span>
+                        <span>Disponibile Feb 2026</span>
                     </div>
                 </div>
             </motion.div>
@@ -184,8 +184,8 @@ export default function HeroSection() {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent"></div>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500">Scorri</span>
+        <div className="w-px h-12 bg-linear-to-b from-gray-500 to-transparent"></div>
       </motion.div>
     </section>
   );

@@ -58,7 +58,7 @@ export default function TiltCard({ children, className }: TiltCardProps) {
         transformStyle: "preserve-3d",
       }}
       className={cn(
-        "relative rounded-xl bg-gradient-to-br from-white/10 to-white/0 p-[1px] shadow-xl transition-shadow duration-300 hover:shadow-purple-500/10",
+        "relative rounded-xl bg-linear-to-br from-white/10 to-white/0 p-px shadow-xl transition-shadow duration-300 hover:shadow-purple-500/10",
         className
       )}
     >

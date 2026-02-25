@@ -28,11 +28,11 @@ export const SkillsSection = () => {
            viewport={{ once: true }}
            className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-4">
-            Skills & Expertise
+          <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-green-400 to-blue-500 mb-4">
+            Competenze & Esperienza
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive overview of my technical abilities and professional attributes.
+            Una panoramica completa delle mie abilità tecniche e attributi professionali.
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ export const SkillsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + (index * 0.1) }}
-              className="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-gray-900 to-black rounded-xl border border-gray-800 hover:border-blue-500/30 group transition-all"
+              className="flex flex-col items-center justify-center p-6 bg-linear-to-br from-gray-900 to-black rounded-xl border border-gray-800 hover:border-blue-500/30 group transition-all"
             >
               <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 group-hover:text-blue-400 transition-all text-gray-400">
                  {/* Lucide icon needs to be passed correctly */}

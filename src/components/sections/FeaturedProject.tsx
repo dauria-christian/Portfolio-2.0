@@ -24,19 +24,19 @@ export default function FeaturedProject() {
            transition={{ duration: 0.8 }}
            className="mb-16"
         >
-          <span className="text-purple-400 font-mono text-sm tracking-wider uppercase">Highlight</span>
-          <h2 className="text-4xl md:text-6xl font-bold mt-2 text-white">Featured Work</h2>
+          <span className="text-purple-400 font-mono text-sm tracking-wider uppercase">In Evidenza</span>
+          <h2 className="text-4xl md:text-6xl font-bold mt-2 text-white">Lavoro in Primo Piano</h2>
         </motion.div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Project Image using Parallax */}
             <motion.div 
               style={{ y, scale }}
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group"
+              className="relative aspect-4/3 rounded-2xl overflow-hidden border border-white/10 group"
             >
                <div className="absolute inset-0 bg-neutral-900 animate-pulse flex items-center justify-center text-gray-700">
                   {/* Placeholder for project image */}
-                  <span className="text-2xl font-bold opacity-20">PROJECT PREVIEW</span>
+                  <span className="text-2xl font-bold opacity-20">ANTEPRIMA PROGETTO</span>
                </div>
                {/* 
                <Image 
@@ -46,7 +46,7 @@ export default function FeaturedProject() {
                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                /> 
                */}
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-60" />
             </motion.div>
 
             {/* Project Details */}
@@ -56,10 +56,10 @@ export default function FeaturedProject() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Nexus Finance Dashboard</h3>
+                  <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Dashboard Nexus Finance</h3>
                   <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                    A next-generation fintech platform visualizing complex data streams in real-time. 
-                    Built with WebSockets for live updates and WebGL for immense data rendering capabilities.
+                    Una piattaforma fintech di nuova generazione che visualizza flussi di dati complessi in tempo reale. 
+                    Costruita con WebSockets per aggiornamenti live e WebGL per immense capacità di rendering dei dati.
                   </p>
                   
                   <div className="flex flex-wrap gap-3 mb-10">
@@ -72,10 +72,10 @@ export default function FeaturedProject() {
 
                   <div className="flex gap-6">
                     <button className="flex items-center gap-2 text-white border-b border-orange-500 pb-1 hover:text-orange-400 transition-colors">
-                      <ExternalLink size={20} /> Live Demo
+                      <ExternalLink size={20} /> Demo Live
                     </button>
                     <button className="flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:text-purple-400 transition-colors">
-                      <Github size={20} /> Source Code
+                      <Github size={20} /> Codice Sorgente
                     </button>
                   </div>
                 </motion.div>
