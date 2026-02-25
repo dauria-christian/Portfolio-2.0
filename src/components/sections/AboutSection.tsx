@@ -1,7 +1,7 @@
 "use client";
 
 import { SectionWrapper } from "../ui/SectionWrapper";
-import { TiltCard } from "../ui/TiltCard";
+import TiltCard from "../ui/TiltCard";
 import { motion } from "framer-motion";
 import { Code, Server, Smartphone, Cloud } from "lucide-react";
 

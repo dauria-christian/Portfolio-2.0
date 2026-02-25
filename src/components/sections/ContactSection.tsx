@@ -87,7 +87,7 @@ export default function ContactSection() {
                         <div>
                             <p className="text-sm text-gray-500">Email</p>
                             <a href="mailto:info@christiandauria.com" className="text-lg font-medium hover:text-white transition-colors">
-                                info@christiandauria.com
+                                christian1.dauria@gmail.com
                             </a>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export default function ContactSection() {
                         </div>
                         <div>
                             <p className="text-sm text-gray-500">Posizione</p>
-                            <p className="text-lg font-medium">Italia (Disponibile da remoto)</p>
+                            <p className="text-lg font-medium">Monfalcone (GO) (Disponibile anche da remoto)</p>
                         </div>
                     </div>
                 </div>

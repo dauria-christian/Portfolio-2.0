@@ -4,6 +4,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturedProject from "@/components/sections/FeaturedProject";
 import TechStack from "@/components/sections/TechStack";
+import SoftSkillsSection from "@/components/sections/SoftSkillsSection";
 import ProcessSection from "@/components/sections/ProcessSection";
 import ProjectsSection from "@/components/sections/ProjectsSection"; 
 import ContactSection from "@/components/sections/ContactSection";
@@ -19,6 +20,8 @@ export default function Home() {
       
       {/* New Tech Stack Section */}
       <TechStack />
+
+      <SoftSkillsSection />
 
       {/* New Highlight Section */}
       <FeaturedProject />
