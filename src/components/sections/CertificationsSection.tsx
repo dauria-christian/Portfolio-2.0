@@ -8,7 +8,7 @@ const certifications = [
   {
     title: "AI-Powered Performance Ads Certification",
     issuer: "Google",
-    date: "2024",
+    date: "2026",
     link: "#",
     icon: <Award className="w-6 h-6 text-blue-500" />
   }

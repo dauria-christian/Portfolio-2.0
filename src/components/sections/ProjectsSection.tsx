@@ -33,7 +33,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="py-24 bg-black">
+    <section id="projects" className="py-24 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
             <h2 className="text-4xl font-bold">Lavori Selezionati</h2>

@@ -6,7 +6,7 @@ import { ArrowRight, Download, MapPin, Briefcase, Calendar, Linkedin, Github, In
 import { TypeAnimation } from "react-type-animation";
 import { useRef, useState } from "react";
 
-const InteractiveButton = ({ children, primary = false }: { children: React.ReactNode; primary?: boolean }) => {
+const InteractiveButton = ({ children, primary = false, onClick }: { children: React.ReactNode; primary?: boolean; onClick?: () => void }) => {
   const ref = useRef<HTMLButtonElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -25,6 +25,7 @@ const InteractiveButton = ({ children, primary = false }: { children: React.Reac
   return (
     <motion.button
       ref={ref}
+      onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
@@ -142,7 +143,10 @@ export default function HeroSection() {
             className="flex flex-col gap-8"
           >
             <div className="flex flex-wrap gap-4 justify-start">
-              <InteractiveButton primary>
+              <InteractiveButton primary onClick={() => {
+                const element = document.getElementById("projects");
+                element?.scrollIntoView({ behavior: "smooth" });
+              }}>
                 Vedi Progetti <ArrowRight size={20} />
               </InteractiveButton>
               
