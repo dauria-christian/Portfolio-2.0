@@ -36,8 +36,8 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
-            <h2 className="text-4xl font-bold">Lavori Selezionati</h2>
-            <button className="text-sm text-gray-400 hover:text-white transition-colors">Vedi Tutto l'Archivio</button>
+          <h2 className="text-4xl font-bold leading-[1.2] py-[0.08em]">Lavori Selezionati</h2>
+            <button className="text-sm text-gray-400 hover:text-amber-300 transition-colors">Vedi Tutto l'Archivio</button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -49,10 +49,10 @@ export default function ProjectsSection() {
                             {project.title} Preview
                          </div>
                          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                            <span className="px-6 py-3 bg-white text-black rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Vedi Case Study</span>
+                             <span className="px-6 py-3 bg-amber-400 text-black rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Vedi Case Study</span>
                          </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                    <h3 className="text-2xl font-bold leading-[1.2] py-[0.04em] text-white mb-2">{project.title}</h3>
                     <p className="text-gray-400 mb-4">{project.description}</p>
                     <div className="flex gap-2 flex-wrap">
                         {project.tags.map((tag) => (

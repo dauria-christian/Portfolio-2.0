@@ -16,7 +16,7 @@ export default function FeaturedProject() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
 
   return (
-    <section ref={containerRef} className="py-32 relative bg-black/95 overflow-hidden">
+    <section ref={containerRef} className="py-32 relative bg-black/95 overflow-x-hidden">
       <div className="container mx-auto px-6">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
@@ -24,8 +24,8 @@ export default function FeaturedProject() {
            transition={{ duration: 0.8 }}
            className="mb-16"
         >
-          <span className="text-purple-400 font-mono text-sm tracking-wider uppercase">In Evidenza</span>
-          <h2 className="text-4xl md:text-6xl font-bold mt-2 text-white">Lavoro in Primo Piano</h2>
+          <span className="text-amber-300 font-mono text-sm tracking-wider uppercase">In Evidenza</span>
+          <h2 className="text-4xl md:text-6xl font-bold leading-[1.18] py-[0.08em] mt-2 text-white">Lavoro in Primo Piano</h2>
         </motion.div>
 
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -56,7 +56,7 @@ export default function FeaturedProject() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">Dashboard Nexus Finance</h3>
+                  <h3 className="text-3xl md:text-5xl font-bold leading-[1.18] py-[0.08em] text-white mb-6">Dashboard Nexus Finance</h3>
                   <p className="text-gray-400 text-lg leading-relaxed mb-8">
                     Una piattaforma fintech di nuova generazione che visualizza flussi di dati complessi in tempo reale. 
                     Costruita con WebSockets per aggiornamenti live e WebGL per immense capacità di rendering dei dati.
@@ -71,10 +71,10 @@ export default function FeaturedProject() {
                   </div>
 
                   <div className="flex gap-6">
-                    <button className="flex items-center gap-2 text-white border-b border-orange-500 pb-1 hover:text-orange-400 transition-colors">
+                    <button className="flex items-center gap-2 text-white border-b border-amber-400 pb-1 hover:text-amber-300 transition-colors">
                       <ExternalLink size={20} /> Demo Live
                     </button>
-                    <button className="flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:text-purple-400 transition-colors">
+                    <button className="flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:text-cyan-300 transition-colors">
                       <Github size={20} /> Codice Sorgente
                     </button>
                   </div>

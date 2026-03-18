@@ -28,7 +28,7 @@ export const SkillsSection = () => {
            viewport={{ once: true }}
            className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-green-400 to-blue-500 mb-4">
+          <h2 className="inline-block text-3xl md:text-5xl font-bold leading-[1.2] py-[0.08em] bg-clip-text text-transparent bg-linear-to-r from-amber-300 to-cyan-300 mb-4">
             Competenze & Esperienza
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -45,13 +45,13 @@ export const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/30 transition-all backdrop-blur-sm group"
+              className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/35 transition-all backdrop-blur-sm group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-cyan-400/12 rounded-xl text-cyan-300 group-hover:scale-110 transition-transform duration-300">
                   {section.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-wide">{section.category}</h3>
+                <h3 className="text-xl font-bold leading-[1.2] py-[0.04em] text-white tracking-wide">{section.category}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2">
@@ -77,9 +77,9 @@ export const SkillsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + (index * 0.1) }}
-              className="flex flex-col items-center justify-center p-6 bg-linear-to-br from-gray-900 to-black rounded-xl border border-gray-800 hover:border-blue-500/30 group transition-all"
+              className="flex flex-col items-center justify-center p-6 bg-linear-to-br from-gray-900 to-black rounded-xl border border-gray-800 hover:border-amber-400/35 group transition-all"
             >
-              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-500/20 group-hover:text-blue-400 transition-all text-gray-400">
+              <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 group-hover:text-cyan-300 transition-all text-gray-400">
                  {/* Lucide icon needs to be passed correctly */}
                  {skill.icon} 
               </div>

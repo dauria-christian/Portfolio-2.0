@@ -10,7 +10,7 @@ export default function ExperienceSection() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-16 text-center"
+          className="text-4xl font-bold leading-[1.2] py-[0.08em] mb-16 text-center"
         >
           Percorso Professionale
         </motion.h2>
@@ -61,13 +61,13 @@ export default function ExperienceSection() {
               }
             ].map((item, index) => (
                 <div key={index} className="relative pl-8 border-l border-white/10">
-                    <span className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-black" />
+                <span className="absolute -left-1.25 top-0 w-2.5 h-2.5 rounded-full bg-amber-400 ring-4 ring-black" />
                     
                     <div className="bg-white/5 border border-white/5 p-6 rounded-xl hover:border-white/10 transition-colors">
                         <div className="flex flex-wrap justify-between items-start mb-4">
                             <div>
-                                <h3 className="text-xl font-bold text-white">{item.role}</h3>
-                                <div className="text-blue-400 font-medium">{item.company}</div>
+                                <h3 className="text-xl font-bold leading-[1.2] py-[0.04em] text-white">{item.role}</h3>
+                                <div className="text-cyan-300 font-medium">{item.company}</div>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-gray-500 mt-1 md:mt-0">
                                 <Calendar size={14} />

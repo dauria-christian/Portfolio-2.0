@@ -49,7 +49,7 @@ export default function HeroSection() {
       {/* Background (Gradient or Video) */}
       <div className="absolute inset-0 z-0">
           {/* Default Gradient Background */}
-          <div className="absolute inset-0 bg-linear-to-br from-indigo-900 via-black to-purple-900 opacity-50" />
+          <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-black to-slate-900 opacity-65" />
           
           {/* Video Placeholder (Commented out until video is available) */}
           {/* 
@@ -82,7 +82,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5 }}
             className="w-fit mb-6 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-2"
           >
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
             <span className="text-sm text-gray-300 font-mono">Disponibile per progetti</span>
           </motion.div>
 
@@ -91,10 +91,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-4 font-display leading-[0.9]"
+            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-4 font-display leading-[1.12] py-[0.02em] overflow-visible"
           >
             <span className="text-white">CHRISTIAN</span>
-            <span className="block text-transparent bg-clip-text bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400">
+            <span className="inline-block leading-[1.12] py-[0.06em] px-2 text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-400 to-cyan-400">
               D'AURIA
             </span>
           </motion.h1>
@@ -118,15 +118,15 @@ export default function HeroSection() {
             className="flex flex-wrap items-center gap-6 mb-10 text-gray-400 text-sm md:text-base font-medium"
           >
              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <MapPin size={18} className="text-purple-400" />
+               <MapPin size={18} className="text-cyan-400" />
                 <span>Monfalcone, Italia</span>
              </div>
              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <Briefcase size={18} className="text-blue-400" />
+               <Briefcase size={18} className="text-amber-400" />
                 <span>Content Creator</span>
              </div>
              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <Briefcase size={18} className="text-blue-400" />
+               <Briefcase size={18} className="text-amber-400" />
                 <span>Front-End Web Developer</span>
              </div>
              <div className="flex items-center gap-2 hover:text-white transition-colors">

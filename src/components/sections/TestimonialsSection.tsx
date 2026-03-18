@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-16 text-center text-white"
+          className="text-4xl font-bold leading-[1.2] py-[0.08em] mb-16 text-center text-white"
         >
           Client Stories
         </motion.h2>
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
               transition={{ delay: i * 0.2 }}
               className="bg-black/40 p-8 rounded-2xl border border-white/5 relative"
             >
-              <Quote className="text-blue-500 mb-6 opacity-50" size={40} />
+              <Quote className="text-cyan-300 mb-6 opacity-55" size={40} />
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
                 "{t.text}"
               </p>

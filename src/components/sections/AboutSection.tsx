@@ -9,22 +9,22 @@ export const AboutSection = () => {
     const services = [
         {
             title: "Sviluppo Frontend",
-            icon: <Code className="w-8 h-8 text-blue-500" />,
+            icon: <Code className="w-8 h-8 text-cyan-300" />,
             description: "Creazione di interfacce web responsive e moderne utilizzando React, Next.js e Tailwind CSS."
         },
         {
             title: "Video Editing",
-            icon: <Server className="w-8 h-8 text-purple-500" />, // Using Server icon as placeholder or maybe find a better one if possible, but keeping consistent with imports
+            icon: <Server className="w-8 h-8 text-amber-300" />, // Using Server icon as placeholder or maybe find a better one if possible, but keeping consistent with imports
             description: "Montaggio video professionale con Adobe Premiere Pro, curando narrazione e ritmo visivo."
         },
         {
             title: "Marketing Digitale",
-            icon: <Smartphone className="w-8 h-8 text-green-500" />,
+            icon: <Smartphone className="w-8 h-8 text-cyan-300" />,
             description: "Studio autonomo di strategie di vendita: follow-up, cross-selling e up-selling."
         },
         {
             title: "Design Interfacce",
-            icon: <Cloud className="w-8 h-8 text-orange-500" />,
+            icon: <Cloud className="w-8 h-8 text-amber-300" />,
             description: "Progettazione grafica e prototipazione con Figma, Canva e Adobe Photoshop."
         }
     ];
@@ -37,7 +37,7 @@ export const AboutSection = () => {
             <TiltCard className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto relative glass p-2">
                 <div className="w-full h-full bg-gray-800 rounded-xl overflow-hidden relative group">
                     {/* Placeholder for Profile Image */}
-                    <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 to-purple-600/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-br from-cyan-500/20 to-amber-400/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
                     <img 
                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
                         alt="Profile" 
@@ -52,7 +52,7 @@ export const AboutSection = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-500"
+                className="inline-block text-3xl md:text-5xl font-bold leading-[1.2] py-[0.08em] bg-clip-text text-transparent bg-linear-to-r from-amber-300 to-cyan-300"
             >
                 Studente. Sviluppatore. Creativo.
             </motion.h2>

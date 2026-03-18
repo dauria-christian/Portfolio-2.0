@@ -31,7 +31,7 @@ const ParticleSwarm = () => {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#60a5fa"
+          color="#22d3ee"
           size={0.015}
           sizeAttenuation={true}
           depthWrite={false}

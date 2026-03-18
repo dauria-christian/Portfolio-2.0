@@ -17,49 +17,49 @@ const softSkills = [
     name: "Problem Solving",
     icon: <Puzzle size={32} />,
     description: "Approccio analitico e creativo per superare ostacoli tecnici e logici complessi.",
-    color: "text-blue-400 border-blue-400/20 hover:bg-blue-400/10"
+    color: "text-cyan-300 border-cyan-300/25 hover:bg-cyan-300/10"
   },
   { 
     name: "Comunicazione",
     icon: <MessageCircle size={32} />,
     description: "Capacità di tradurre concetti tecnici in linguaggio comprensibile per team e clienti.",
-    color: "text-green-400 border-green-400/20 hover:bg-green-400/10"
+    color: "text-amber-300 border-amber-300/25 hover:bg-amber-300/10"
   },
   { 
     name: "Lavoro di Squadra",
     icon: <Users size={32} />,
     description: "Collaborazione efficace in ambienti agili, valorizzando le idee di ogni membro.",
-    color: "text-purple-400 border-purple-400/20 hover:bg-purple-400/10"
+    color: "text-cyan-300 border-cyan-300/25 hover:bg-cyan-300/10"
   },
   { 
     name: "Gestione del Tempo",
     icon: <Clock size={32} />,
     description: "Organizzazione efficiente delle priorità per rispettare le scadenze senza sacrificare la qualità.",
-    color: "text-yellow-400 border-yellow-400/20 hover:bg-yellow-400/10"
+    color: "text-amber-300 border-amber-300/25 hover:bg-amber-300/10"
   },
   { 
     name: "Adattabilità",
     icon: <Zap size={32} />,
     description: "Flessibilità nell'apprendere nuove tecnologie e adattarsi a cambiamenti rapidi.",
-    color: "text-orange-400 border-orange-400/20 hover:bg-orange-400/10"
+    color: "text-cyan-300 border-cyan-300/25 hover:bg-cyan-300/10"
   },
   { 
     name: "Pensiero Creativo",
     icon: <Lightbulb size={32} />,
     description: "Ricerca costante di soluzioni innovative fuori dagli schemi convenzionali.",
-    color: "text-pink-400 border-pink-400/20 hover:bg-pink-400/10"
+    color: "text-amber-300 border-amber-300/25 hover:bg-amber-300/10"
   },
   { 
     name: "Orientamento all'Obiettivo",
     icon: <Target size={32} />,
     description: "Focus costante sul raggiungimento dei risultati concordati e sulla soddisfazione del cliente.",
-    color: "text-red-400 border-red-400/20 hover:bg-red-400/10"
+    color: "text-cyan-300 border-cyan-300/25 hover:bg-cyan-300/10"
   },
   { 
     name: "Apprendimento Continuo",
     icon: <BrainCircuit size={32} />,
     description: "Curiosità insaziabile e dedizione costante all'aggiornamento professionale.",
-    color: "text-cyan-400 border-cyan-400/20 hover:bg-cyan-400/10"
+    color: "text-amber-300 border-amber-300/25 hover:bg-amber-300/10"
   }
 ];
 
@@ -67,14 +67,14 @@ export default function SoftSkillsSection() {
   return (
     <section className="py-24 bg-black relative">
        {/* Decorative Background Element */}
-       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-purple-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-cyan-900/20 rounded-full blur-[120px] pointer-events-none" />
        
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-teal-400 to-blue-500 mb-6"
+              className="inline-block text-4xl md:text-5xl font-bold leading-[1.2] py-4 px-3 bg-clip-text text-transparent bg-linear-to-r from-amber-300 to-cyan-300 mb-6"
             >
               Oltre la Tecnica
             </motion.h2>

@@ -34,7 +34,7 @@ export default function ProcessSection() {
   return (
     <section className="py-32 bg-black relative">
        {/* Connecting Line */}
-       <div className="absolute top-1/2 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent hidden lg:block -translate-y-1/2 z-0" />
+      <div className="absolute top-1/2 left-0 w-full h-px bg-linear-to-r from-transparent via-amber-400/60 to-transparent hidden lg:block -translate-y-1/2 z-0" />
 
        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
@@ -42,7 +42,7 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Il Mio Flusso di Lavoro</h2>
+             <h2 className="text-4xl md:text-5xl font-bold leading-[1.2] py-[0.08em] text-white mb-4">Il Mio Flusso di Lavoro</h2>
              <p className="text-gray-400 max-w-2xl mx-auto">
                Un approccio strutturato al caos. Da un'idea a un prodotto finito.
              </p>
@@ -55,13 +55,13 @@ export default function ProcessSection() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
-                  className="group relative bg-neutral-900/50 border border-white/5 p-8 rounded-2xl hover:border-blue-500/30 transition-colors"
+                  className="group relative bg-neutral-900/50 border border-white/5 p-8 rounded-2xl hover:border-amber-400/35 transition-colors"
                 >
-                   <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                   <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-400/12 text-cyan-300 group-hover:bg-amber-400 group-hover:text-black transition-all duration-300">
                       <step.icon size={28} />
                    </div>
                    
-                   <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                   <h3 className="text-2xl font-bold leading-[1.2] py-[0.04em] text-white mb-3 group-hover:text-cyan-300 transition-colors">
                      {step.title}
                    </h3>
                    

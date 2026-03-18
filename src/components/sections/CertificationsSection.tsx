@@ -10,7 +10,7 @@ const certifications = [
     issuer: "Google",
     date: "2026",
     link: "#",
-    icon: <Award className="w-6 h-6 text-blue-500" />
+    icon: <Award className="w-6 h-6 text-amber-300" />
   }
 ];
 
@@ -24,8 +24,8 @@ export default function CertificationsSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-red-600">
+          <h2 className="text-4xl md:text-5xl font-bold leading-[1.2] py-[0.08em] mb-6">
+            <span className="inline-block leading-[1.2] py-[0.05em] text-transparent bg-clip-text bg-linear-to-r from-amber-300 to-cyan-300">
               Certificazioni
             </span>
           </h2>
@@ -58,7 +58,7 @@ export default function CertificationsSection() {
                 </a>
               </div>
               
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-xl font-semibold leading-[1.2] py-[0.04em] text-white mb-2">
                 {cert.title}
               </h3>
               

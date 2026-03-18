@@ -20,6 +20,40 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Color Palette (Design System)
+
+Palette principale adottata (regola dei 3 colori):
+
+1. Primary: `#0f172a` (deep navy)
+2. Accent: `#f59e0b` (amber)
+3. Secondary: `#22d3ee` (cyan)
+
+Support colors:
+
+1. Background base: `#030712`
+2. Foreground text: `#f8fafc`
+3. Surface overlays: `rgba(15, 23, 42, 0.38)`
+
+Regole d'uso:
+
+1. Primary: struttura, sezioni scure, card base.
+2. Accent: CTA, focus states, elementi che devono emergere subito.
+3. Secondary: elementi di supporto (badge, icone, glow, progress line).
+4. Titoli gradient: `from-amber-300` -> `to-cyan-300`.
+
+Nota importante:
+
+1. I colori hover delle icone social restano intenzionalmente invariati per preservare il riconoscimento dei brand.
+
+### Scelta Sfondo
+
+Lo sfondo resta scuro (`#030712` / `#0f172a`) per questi motivi:
+
+1. Migliore contrasto su testi e titoli gradient.
+2. Coerenza con il mood tech/cinematico del portfolio.
+3. Maggiore leggibilità su sezioni dense di contenuto.
+4. Piu' spazio visivo per accenti amber/cyan senza effetto caotico.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

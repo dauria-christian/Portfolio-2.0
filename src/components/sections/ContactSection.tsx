@@ -73,7 +73,7 @@ export default function ContactSection() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
             >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Parliamo del tuo <br/>prossimo progetto?</h2>
+                <h2 className="text-4xl md:text-5xl font-bold leading-[1.2] py-[0.08em] text-white mb-6">Parliamo del tuo <br/>prossimo progetto?</h2>
                 <p className="text-gray-400 text-lg mb-10">
                     Sono sempre alla ricerca di nuove sfide e collaborazioni interessanti. 
                     Se hai un'idea innovativa o vuoi semplicemente espandere il tuo network, scrivimi!
@@ -82,7 +82,7 @@ export default function ContactSection() {
                 <div className="space-y-6 mb-12">
                     <div className="flex items-center gap-4 text-gray-300">
                         <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white">
-                            <Mail size={24} />
+                            <Mail size={24} className="text-amber-300" />
                         </div>
                         <div>
                             <p className="text-sm text-gray-500">Email</p>
@@ -94,7 +94,7 @@ export default function ContactSection() {
                     
                     <div className="flex items-center gap-4 text-gray-300">
                         <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white">
-                            <MapPin size={24} />
+                            <MapPin size={24} className="text-cyan-300" />
                         </div>
                         <div>
                             <p className="text-sm text-gray-500">Posizione</p>
@@ -104,7 +104,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="pt-8 border-t border-white/10">
-                    <h3 className="text-white font-bold mb-6">Seguimi sui Social</h3>
+                    <h3 className="text-white font-bold leading-[1.2] py-[0.04em] mb-6">Seguimi sui Social</h3>
                     <div className="flex flex-wrap gap-4">
                         {socialLinks.map((social) => (
                             <a 
@@ -136,7 +136,7 @@ export default function ContactSection() {
                             <input 
                                 type="text" 
                                 id="name" 
-                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all"
+                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all"
                                 placeholder="Mario Rossi"
                             />
                         </div>
@@ -145,7 +145,7 @@ export default function ContactSection() {
                             <input 
                                 type="email" 
                                 id="email" 
-                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all"
+                                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all"
                                 placeholder="mario@esempio.com"
                             />
                         </div>
@@ -155,7 +155,7 @@ export default function ContactSection() {
                         <label htmlFor="subject" className="text-sm font-medium text-gray-400">Oggetto</label>
                         <select 
                             id="subject" 
-                            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all appearance-none"
+                            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all appearance-none"
                         >
                             <option>Collaborazione Progetto</option>
                             <option>Opportunità di Lavoro</option>
@@ -169,14 +169,14 @@ export default function ContactSection() {
                         <textarea 
                             id="message" 
                             rows={4} 
-                            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all resize-none"
+                            className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all resize-none"
                             placeholder="Raccontami la tua idea..."
                         ></textarea>
                     </div>
 
                     <button 
                         type="submit" 
-                        className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors transform active:scale-95"
+                        className="w-full py-4 bg-amber-400 text-black font-bold rounded-lg hover:bg-amber-300 transition-colors transform active:scale-95"
                     >
                         Invia Messaggio
                     </button>

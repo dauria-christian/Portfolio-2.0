@@ -21,7 +21,7 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1, type: "spring" }}
             >
-              <div className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600 mb-2">
+              <div className="inline-block text-5xl md:text-6xl font-bold leading-[1.2] py-[0.06em] text-transparent bg-clip-text bg-linear-to-b from-amber-300 to-cyan-300 mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-500 uppercase tracking-widest">
