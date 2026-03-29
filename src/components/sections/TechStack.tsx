@@ -1,19 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiCanva,
+  SiFigma,
+  SiPython,
+  SiHtml5,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const skills = [
-  { name: "React", level: 90 },
-  { name: "Next.js", level: 90 },
-  { name: "Premiere Pro", level: 80 },
-  { name: "Canva", level: 85 },
-  { name: "Figma", level: 75 },
-  { name: "Photoshop", level: 60 },
-  { name: "Python", level: 65 },
-  { name: "HTML5/CSS3", level: 80 },
-  { name: "JavaScript", level: 80 },
-  { name: "TypeScript", level: 85 },
-  { name: "Tailwind", level: 95 },
+  { name: "React", level: 90, icon: SiReact, iconClass: "text-sky-400", type: "react-icon" },
+  { name: "Next.js", level: 90, icon: SiNextdotjs, iconClass: "text-white", type: "react-icon" },
+  {
+    name: "Premiere Pro",
+    level: 80,
+    imagePath: "/premiere.png",
+    type: "image",
+  },
+  { name: "Canva", level: 85, icon: SiCanva, iconClass: "text-cyan-300", type: "react-icon" },
+  { name: "Figma", level: 75, icon: SiFigma, iconClass: "text-orange-300", type: "react-icon" },
+  {
+    name: "Photoshop",
+    level: 60,
+    imagePath: "/adobe-photoshop.svg",
+    type: "image",
+  },
+  { name: "Python", level: 65, icon: SiPython, iconClass: "text-amber-300", type: "react-icon" },
+  { name: "HTML5", level: 80, icon: SiHtml5, iconClass: "text-orange-400", type: "react-icon" },
+  {
+    name: "JavaScript",
+    level: 80,
+    icon: SiJavascript,
+    iconClass: "text-yellow-300",
+    type: "react-icon",
+  },
+  {
+    name: "TypeScript",
+    level: 85,
+    icon: SiTypescript,
+    iconClass: "text-blue-400",
+    type: "react-icon",
+  },
+  {
+    name: "Tailwind",
+    level: 95,
+    icon: SiTailwindcss,
+    iconClass: "text-cyan-300",
+    type: "react-icon",
+  },
 ];
 
 export default function TechStack() {
@@ -72,7 +112,19 @@ export default function TechStack() {
                          whileHover={{ scale: 1.1, rotate: 5 }}
                          className="w-24 h-24 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center justify-center gap-2 hover:bg-white/10 cursor-pointer shadow-lg hover:shadow-cyan-300/20 transition-colors"
                        >
-                          <div className="w-8 h-8 rounded-full bg-linear-to-tr from-gray-700 to-gray-600"></div>
+                          {skill.type === "image" ? (
+                            <div className="w-8 h-8 flex items-center justify-center">
+                              <Image
+                                src={skill.imagePath!}
+                                alt={skill.name}
+                                width={40}
+                                height={40}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <skill.icon className={`w-8 h-8 ${skill.iconClass}`} />
+                          )}
                           <span className="text-xs font-mono text-gray-400">{skill.name}</span>
                        </motion.div> 
                     ))}

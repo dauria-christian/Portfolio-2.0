@@ -44,6 +44,7 @@ const InteractiveButton = ({
   return (
     <motion.button
       ref={ref}
+      data-cursor="2"
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -68,37 +69,25 @@ export default function HeroSection() {
   const cvFileName = "cv-christian-dauria.pdf";
 
   useEffect(() => {
-    let isMounted = true;
+    const storageKey = "portfolio_hero_views_total";
+    const sessionKey = "portfolio_hero_views_counted";
 
-    const fetchViews = async () => {
-      try {
-        const response = await fetch(
-          "https://api.countapi.xyz/hit/portfolio-2-0/hero-views",
-          {
-            cache: "no-store",
-          }
-        );
+    try {
+      const storedValue = Number(localStorage.getItem(storageKey) ?? "0");
+      const safeStoredValue = Number.isFinite(storedValue) && storedValue > 0 ? storedValue : 0;
+      const alreadyCounted = sessionStorage.getItem(sessionKey) === "1";
 
-        if (!response.ok) {
-          throw new Error("Failed to fetch view count");
-        }
+      const nextValue = alreadyCounted ? safeStoredValue : safeStoredValue + 1;
 
-        const data: { value?: number } = await response.json();
-        if (isMounted && typeof data.value === "number") {
-          setViewCount(data.value);
-        }
-      } catch {
-        if (isMounted) {
-          setViewCount(0);
-        }
+      if (!alreadyCounted) {
+        localStorage.setItem(storageKey, String(nextValue));
+        sessionStorage.setItem(sessionKey, "1");
       }
-    };
 
-    fetchViews();
-
-    return () => {
-      isMounted = false;
-    };
+      setViewCount(nextValue);
+    } catch {
+      setViewCount(0);
+    }
   }, []);
 
   const formattedViewCount =

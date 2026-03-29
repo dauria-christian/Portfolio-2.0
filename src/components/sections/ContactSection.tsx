@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FormEvent, useState } from "react";
 import { Mail, Linkedin, Instagram, Youtube, Twitter, Twitch, Send, MapPin } from "lucide-react";
 
 // Fallback per icone non standard in Lucide React (simil-Telegram/TikTok se non presenti)
@@ -63,6 +65,46 @@ const socialLinks = [
 ];
 
 export default function ContactSection() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "Collaborazione Progetto",
+        message: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formNotice, setFormNotice] = useState<string | null>(null);
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const body = [
+            `Nome: ${formData.name}`,
+            `Email: ${formData.email}`,
+            "",
+            "Messaggio:",
+            formData.message,
+        ].join("\n");
+
+        const mailtoUrl = `mailto:christian1.dauria@gmail.com?subject=${encodeURIComponent(
+            formData.subject
+        )}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoUrl;
+
+        setFormNotice(
+            "Sto aprendo il tuo client email con il messaggio precompilato. Invia da li per completare la richiesta."
+        );
+        setIsSubmitting(false);
+    };
+
+    const handleChange = (
+        key: "name" | "email" | "subject" | "message",
+        value: string
+    ) => {
+        setFormData((prev) => ({ ...prev, [key]: value }));
+    };
+
   return (
     <section className="py-24 bg-black border-t border-white/5">
       <div className="container mx-auto px-6">
@@ -129,13 +171,17 @@ export default function ContactSection() {
                viewport={{ once: true }}
                className="bg-neutral-900/50 p-8 rounded-2xl border border-white/5 backdrop-blur-sm"
             >
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label htmlFor="name" className="text-sm font-medium text-gray-400">Nome</label>
                             <input 
                                 type="text" 
                                 id="name" 
+                                name="name"
+                                value={formData.name}
+                                onChange={(e) => handleChange("name", e.target.value)}
+                                required
                                 className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all"
                                 placeholder="Mario Rossi"
                             />
@@ -145,6 +191,10 @@ export default function ContactSection() {
                             <input 
                                 type="email" 
                                 id="email" 
+                                name="email"
+                                value={formData.email}
+                                onChange={(e) => handleChange("email", e.target.value)}
+                                required
                                 className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all"
                                 placeholder="mario@esempio.com"
                             />
@@ -155,6 +205,9 @@ export default function ContactSection() {
                         <label htmlFor="subject" className="text-sm font-medium text-gray-400">Oggetto</label>
                         <select 
                             id="subject" 
+                            name="subject"
+                            value={formData.subject}
+                            onChange={(e) => handleChange("subject", e.target.value)}
                             className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all appearance-none"
                         >
                             <option>Collaborazione Progetto</option>
@@ -168,6 +221,10 @@ export default function ContactSection() {
                         <label htmlFor="message" className="text-sm font-medium text-gray-400">Messaggio</label>
                         <textarea 
                             id="message" 
+                            name="message"
+                            value={formData.message}
+                            onChange={(e) => handleChange("message", e.target.value)}
+                            required
                             rows={4} 
                             className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400/60 focus:ring-1 focus:ring-amber-400/35 transition-all resize-none"
                             placeholder="Raccontami la tua idea..."
@@ -176,10 +233,16 @@ export default function ContactSection() {
 
                     <button 
                         type="submit" 
+                        data-cursor="2"
+                        disabled={isSubmitting}
                         className="w-full py-4 bg-amber-400 text-black font-bold rounded-lg hover:bg-amber-300 transition-colors transform active:scale-95"
                     >
-                        Invia Messaggio
+                        {isSubmitting ? "Apro il client email..." : "Invia Messaggio"}
                     </button>
+
+                    {formNotice && (
+                      <p className="text-sm text-center text-cyan-300 mt-2">{formNotice}</p>
+                    )}
                     
                     <p className="text-xs text-center text-gray-600 mt-4">
                         Rispondo solitamente entro 24-48 ore.
@@ -191,8 +254,8 @@ export default function ContactSection() {
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <p>© {new Date().getFullYear()} Christian Dauria. Tutti i diritti riservati.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+                <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             </div>
         </div>
       </div>

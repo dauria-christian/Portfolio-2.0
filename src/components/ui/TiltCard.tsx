@@ -12,9 +12,10 @@ function cn(...inputs: ClassValue[]) {
 interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
+  disableTilt?: boolean;
 }
 
-export default function TiltCard({ children, className }: TiltCardProps) {
+export default function TiltCard({ children, className, disableTilt = false }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -23,8 +24,8 @@ export default function TiltCard({ children, className }: TiltCardProps) {
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = ref.current!.getBoundingClientRect();
@@ -50,11 +51,11 @@ export default function TiltCard({ children, className }: TiltCardProps) {
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={disableTilt ? undefined : handleMouseMove}
+      onMouseLeave={disableTilt ? undefined : handleMouseLeave}
       style={{
-        rotateY,
-        rotateX,
+        rotateY: disableTilt ? 0 : rotateY,
+        rotateX: disableTilt ? 0 : rotateX,
         transformStyle: "preserve-3d",
       }}
       className={cn(

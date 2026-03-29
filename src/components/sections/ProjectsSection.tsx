@@ -8,8 +8,8 @@ import { useState } from "react";
 
 const allProjects = [
   {
-    title: "Video 2 - WhiteBoymingro",
-    description: "Secondo video editing e motion graphics per la crescita del canale YouTube.",
+    title: "48H a MILANO con MINGRO",
+    description: "Secondo video editato per la crescita del canale YouTubed di Whiteboymingro.",
     tags: ["Video Editing", "YouTube", "Motion Graphics"],
     image: "/images/copertina_milano.png"
   },
@@ -27,7 +27,7 @@ const allProjects = [
   },
   {
     title: "Video per WhiteBoymingro",
-    description: "Produzione video editing creativo e motion graphics per contenuti social.",
+    description: "Primo video editato per la crescita del canale YouTubed di Whiteboymingro.",
     tags: ["Video Editing", "YouTube", "Content Creation"],
     image: "/images/copertina_mingro_vlog_1.png"
   }
@@ -58,11 +58,11 @@ export default function ProjectsSection() {
                            src={project.image}
                            alt={project.title}
                            fill
-                           className="object-cover group-hover:scale-105 transition-transform duration-500"
+                           className="object-cover group-hover:scale-102 transition-transform duration-300"
                            priority={index < 2}
                          />
-                         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                             <span className="px-6 py-3 bg-amber-400 text-black rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Scopri</span>
+                         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
+                             <span className="px-6 py-3 bg-amber-400 text-black rounded-full font-bold group-hover:bg-amber-300 transition-colors duration-300">Scopri</span>
                          </div>
                     </div>
                     <h3 className="text-2xl font-bold leading-[1.2] py-[0.04em] text-white mb-2">{project.title}</h3>
