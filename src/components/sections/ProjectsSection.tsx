@@ -3,53 +3,66 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button"; // Assuming shadcn or standard ui button
 import TiltCard from "@/components/ui/TiltCard";
+import Image from "next/image";
+import { useState } from "react";
 
-const projects = [
+const allProjects = [
   {
-    title: "Hyrise Studios WebSite",
-    description: "Sito web moderno e performante per l'agenzia creativa Hyrise Studios.",
-    tags: ["Web Development", "React", "Design"],
-    image: "/placeholder-hyrise.jpg" // Placeholder
-  },
-  {
-    title: "Interfaccia Web (Comune di Monfalcone)",
-    description: "Interfaccia utente responsive e accessibile per i servizi web del Comune di Monfalcone.",
-    tags: ["UI/UX", "Private Administration", "Frontend"],
-    image: "/placeholder-monfalcone.jpg" // Placeholder
+    title: "Video 2 - WhiteBoymingro",
+    description: "Secondo video editing e motion graphics per la crescita del canale YouTube.",
+    tags: ["Video Editing", "YouTube", "Motion Graphics"],
+    image: "/images/copertina_milano.png"
   },
   {
     title: "Portfolio Condiviso - CL-Studio",
     description: "Piattaforma collaborativa per mostrare e condividere progetti creativi in team.",
     tags: ["Design", "Web Development", "Collaboration"],
-    image: "/placeholder-portfolio.jpg" // Placeholder
+    image: "/images/condiviso.png"
+  },
+  {
+    title: "Interfaccia Web (Comune di Monfalcone)",
+    description: "Interfaccia utente responsive e accessibile per i servizi web del Comune di Monfalcone.",
+    tags: ["UI/UX", "Private Administration", "Frontend"],
+    image: "/images/comune1.png"
   },
   {
     title: "Video per WhiteBoymingro",
     description: "Produzione video editing creativo e motion graphics per contenuti social.",
     tags: ["Video Editing", "YouTube", "Content Creation"],
-    image: "/placeholder-video.jpg" // Placeholder
+    image: "/images/copertina_mingro_vlog_1.png"
   }
 ];
 
 export default function ProjectsSection() {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? allProjects : allProjects.slice(0, 2);
+
   return (
     <section id="projects" className="py-24 bg-black">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-4xl font-bold leading-[1.2] py-[0.08em]">Lavori Selezionati</h2>
-            <button className="text-sm text-gray-400 hover:text-amber-300 transition-colors">Vedi Tutto l'Archivio</button>
+            <button 
+              onClick={() => setShowAll(!showAll)}
+              className="text-sm text-gray-400 hover:text-amber-300 transition-colors"
+            >
+              {showAll ? "Mostra Meno" : "Vedi Tutto l'Archivio"}
+            </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
                 <TiltCard key={index} className="group cursor-pointer">
                     <div className="aspect-video bg-neutral-900 rounded-xl overflow-hidden mb-6 relative">
-                         {/* Image Placeholder */}
-                         <div className="absolute inset-0 bg-white/5 flex items-center justify-center text-gray-600">
-                            {project.title} Preview
-                         </div>
+                         <Image
+                           src={project.image}
+                           alt={project.title}
+                           fill
+                           className="object-cover group-hover:scale-105 transition-transform duration-500"
+                           priority={index < 2}
+                         />
                          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                             <span className="px-6 py-3 bg-amber-400 text-black rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Vedi Case Study</span>
+                             <span className="px-6 py-3 bg-amber-400 text-black rounded-full font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Scopri</span>
                          </div>
                     </div>
                     <h3 className="text-2xl font-bold leading-[1.2] py-[0.04em] text-white mb-2">{project.title}</h3>

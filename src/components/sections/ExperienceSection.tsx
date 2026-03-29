@@ -18,16 +18,22 @@ export default function ExperienceSection() {
         <div className="max-w-4xl mx-auto space-y-12">
             {[
               {
+                role: "CEO",
+                company: "Hyrise",
+                period: "Presente",
+                desc: "Coordinamento completo dell'agenzia Hyrise."
+              },
+              {
+                role: "Manager",
+                company: "WhiteBoymingro",
+                period: "Presente",
+                desc: "Creazione contenuti video. Pianificazione e gestione dei progetti creativi."
+              },
+              {
                 role: "Video Editor",
                 company: "2Hustler",
                 period: "Presente",
                 desc: "Creazione contenuti video."
-              },
-              {
-                role: "Video Editor",
-                company: "ComfyMC",
-                period: "Esperienza Precedente",
-                desc: "Creazione contenuti video per Tiktok."
               },
                {
                 role: "Video Editor",
@@ -54,7 +60,7 @@ export default function ExperienceSection() {
                 desc: "Analisi di strategie di crescita e monetizzazione."
               },
               {
-                role: "Project Manager / Tutor /Aiutante Social Media",
+                role: "Project Manager / Tutor / Aiutante Social Media",
                 company: "Titanet Studios / Titanet Labs",
                 period: "Esperienza Precedente",
                 desc: "Coordinamento progetti creativi, addetto vendita e gestione risorse umane. Supporto alla gestione dei canali social e coordinamento progetti"

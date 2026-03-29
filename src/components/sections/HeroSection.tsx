@@ -91,7 +91,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-4 font-display leading-[1.12] py-[0.02em] overflow-visible"
+            className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-4 font-display leading-[1.12] py-[0.02em] overflow-visible"
           >
             <span className="text-white">CHRISTIAN</span>
             <span className="inline-block leading-[1.12] py-[0.06em] px-2 text-transparent bg-clip-text bg-linear-to-r from-amber-300 via-amber-400 to-cyan-400">
@@ -104,7 +104,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mb-8 leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mb-8 leading-relaxed font-light"
           >
             Tutti mi dicono che faccio troppe cose rispetto a quello che è effettivamente il mio tempo libero.
             Non mi definisco in un singolo ruolo, sono capace di adattarmi e svolgere più mansioni.
@@ -115,7 +115,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 }}
-            className="flex flex-wrap items-center gap-6 mb-10 text-gray-400 text-sm md:text-base font-medium"
+            className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10 text-gray-400 text-xs sm:text-sm md:text-base font-medium"
           >
              <div className="flex items-center gap-2 hover:text-white transition-colors">
                <MapPin size={18} className="text-cyan-400" />
@@ -142,7 +142,7 @@ export default function HeroSection() {
             transition={{ delay: 1.4 }}
             className="flex flex-col gap-8"
           >
-            <div className="flex flex-wrap gap-4 justify-start">
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-start">
               <InteractiveButton primary onClick={() => {
                 const element = document.getElementById("projects");
                 element?.scrollIntoView({ behavior: "smooth" });
@@ -155,7 +155,7 @@ export default function HeroSection() {
               </InteractiveButton>
             </div>
 
-            <div className="flex gap-6 items-center">
+            <div className="flex gap-3 sm:gap-6 items-center flex-wrap">
               <a href="#" className="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-110"><Instagram size={24} /></a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"><Github size={24} /></a>
               <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors transform hover:scale-110"><Linkedin size={24} /></a>
@@ -183,17 +183,6 @@ export default function HeroSection() {
         
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
-      >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500">Scorri</span>
-        <div className="w-px h-12 bg-linear-to-b from-gray-500 to-transparent"></div>
-      </motion.div>
     </section>
   );
 }
