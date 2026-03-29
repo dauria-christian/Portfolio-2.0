@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturedProject from "@/components/sections/FeaturedProject";
 import TechStack from "@/components/sections/TechStack";
@@ -15,7 +14,6 @@ import CertificationsSection from "@/components/sections/CertificationsSection";
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-amber-400/30">
-      <CustomCursor />
       <ScrollProgress />
       
       <HeroSection />

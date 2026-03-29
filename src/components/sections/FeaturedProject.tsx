@@ -36,7 +36,7 @@ export default function FeaturedProject() {
             >
                <Image 
                  src="/images/Hyrise1.png" 
-                 alt="Hyrise Studios WebSite" 
+                 alt="Hyrise - WebSite" 
                  width={1200}
                  height={720}
                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
@@ -50,9 +50,9 @@ export default function FeaturedProject() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  <h3 className="text-3xl md:text-5xl font-bold leading-[1.18] py-[0.08em] text-white mb-6">Hyrise Studios WebSite</h3>
+                  <h3 className="text-3xl md:text-5xl font-bold leading-[1.18] py-[0.08em] text-white mb-6">Hyrise - WebSite</h3>
                   <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                    Sito web moderno e performante per l'agenzia creativa Hyrise Studios.
+                    Sito web moderno e performante per l'ecosistema digitale di Hyrise.
                   </p>
                   
                   <div className="flex flex-wrap gap-3 mb-10">

@@ -13,9 +13,10 @@ interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
   disableTilt?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export default function TiltCard({ children, className, disableTilt = false }: TiltCardProps) {
+export default function TiltCard({ children, className, disableTilt = false, onClick }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
@@ -53,6 +54,7 @@ export default function TiltCard({ children, className, disableTilt = false }: T
       ref={ref}
       onMouseMove={disableTilt ? undefined : handleMouseMove}
       onMouseLeave={disableTilt ? undefined : handleMouseLeave}
+      onClick={onClick}
       style={{
         rotateY: disableTilt ? 0 : rotateY,
         rotateX: disableTilt ? 0 : rotateX,
