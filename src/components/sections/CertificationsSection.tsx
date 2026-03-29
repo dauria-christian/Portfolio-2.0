@@ -9,7 +9,14 @@ const certifications = [
     title: "AI-Powered Performance Ads Certification",
     issuer: "Google",
     date: "2026",
-    link: "#",
+    link: "https://skillshop.credential.net/9f533bc8-f6ee-4df5-810c-8289ee68af40#acc.c4IQbSw7",
+    icon: <Award className="w-6 h-6 text-amber-300" />
+  },
+  {
+    title: "AI-Powered Shopping ads Certification",
+    issuer: "Google",
+    date: "2026",
+    link: "https://skillshop.credential.net/ec049942-3697-4a73-8685-a3793c44753e#acc.dMAwB6rZ",
     icon: <Award className="w-6 h-6 text-amber-300" />
   }
 ];
