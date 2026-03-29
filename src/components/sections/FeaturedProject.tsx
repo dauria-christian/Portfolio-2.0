@@ -32,21 +32,15 @@ export default function FeaturedProject() {
             {/* Project Image using Parallax */}
             <motion.div 
               style={{ y, scale }}
-              className="relative aspect-4/3 rounded-2xl overflow-hidden border border-white/10 group"
+              className="relative rounded-2xl overflow-hidden border border-white/10 group"
             >
-               <div className="absolute inset-0 bg-neutral-900 animate-pulse flex items-center justify-center text-gray-700">
-                  {/* Placeholder for project image */}
-                  <span className="text-2xl font-bold opacity-20">ANTEPRIMA PROGETTO</span>
-               </div>
-               {/* 
                <Image 
-                 src="/project-1.jpg" 
-                 alt="Featured Project" 
-                 fill 
-                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-               /> 
-               */}
-               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                 src="/images/Hyrise1.png" 
+                 alt="Hyrise Studios WebSite" 
+                 width={1200}
+                 height={720}
+                 className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+               />
             </motion.div>
 
             {/* Project Details */}
@@ -56,14 +50,13 @@ export default function FeaturedProject() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  <h3 className="text-3xl md:text-5xl font-bold leading-[1.18] py-[0.08em] text-white mb-6">Dashboard Nexus Finance</h3>
+                  <h3 className="text-3xl md:text-5xl font-bold leading-[1.18] py-[0.08em] text-white mb-6">Hyrise Studios WebSite</h3>
                   <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                    Una piattaforma fintech di nuova generazione che visualizza flussi di dati complessi in tempo reale. 
-                    Costruita con WebSockets per aggiornamenti live e WebGL per immense capacità di rendering dei dati.
+                    Sito web moderno e performante per l'agenzia creativa Hyrise Studios.
                   </p>
                   
                   <div className="flex flex-wrap gap-3 mb-10">
-                    {["React", "Three.js", "Node.js", "Redis", "TypeScript"].map((tag) => (
+                    {["Web Development", "React", "Design", "PostgreSQL", "TypeScript"].map((tag) => (
                       <span key={tag} className="px-4 py-2 rounded-full border border-white/10 text-sm text-gray-300 bg-white/5 backdrop-blur-sm">
                         {tag}
                       </span>
@@ -71,12 +64,9 @@ export default function FeaturedProject() {
                   </div>
 
                   <div className="flex gap-6">
-                    <button className="flex items-center gap-2 text-white border-b border-amber-400 pb-1 hover:text-amber-300 transition-colors">
-                      <ExternalLink size={20} /> Demo Live
-                    </button>
-                    <button className="flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:text-cyan-300 transition-colors">
-                      <Github size={20} /> Codice Sorgente
-                    </button>
+                    <a href="https://hyrise-studios.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white border-b border-amber-400 pb-1 hover:text-amber-300 transition-colors">
+                      <ExternalLink size={20} /> Apri 
+                    </a>
                   </div>
                 </motion.div>
             </div>
