@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import type { IconType } from "react-icons";
 import {
   SiReact,
   SiNextdotjs,
@@ -14,7 +15,24 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 
-const skills = [
+type ReactIconSkill = {
+  name: string;
+  level: number;
+  type: "react-icon";
+  icon: IconType;
+  iconClass: string;
+};
+
+type ImageSkill = {
+  name: string;
+  level: number;
+  type: "image";
+  imagePath: string;
+};
+
+type Skill = ReactIconSkill | ImageSkill;
+
+const skills: Skill[] = [
   { name: "React", level: 90, icon: SiReact, iconClass: "text-sky-400", type: "react-icon" },
   { name: "Next.js", level: 90, icon: SiNextdotjs, iconClass: "text-white", type: "react-icon" },
   {
@@ -115,7 +133,7 @@ export default function TechStack() {
                           {skill.type === "image" ? (
                             <div className="w-8 h-8 flex items-center justify-center">
                               <Image
-                                src={skill.imagePath!}
+                                src={skill.imagePath}
                                 alt={skill.name}
                                 width={40}
                                 height={40}
