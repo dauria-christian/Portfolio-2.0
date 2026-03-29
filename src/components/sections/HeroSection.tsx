@@ -69,29 +69,125 @@ export default function HeroSection() {
   const cvFileName = "cv-christian-dauria.pdf";
 
   useEffect(() => {
-    const storageKey = "portfolio_hero_views_total";
-    const sessionKey = "portfolio_hero_views_counted";
+    const sessionIdKey = "portfolio_hero_session_id";
+    let pollingIntervalId: number | null = null;
 
-    try {
-      const storedValue = Number(localStorage.getItem(storageKey) ?? "0");
-      const safeStoredValue = Number.isFinite(storedValue) && storedValue > 0 ? storedValue : 0;
-      const alreadyCounted = sessionStorage.getItem(sessionKey) === "1";
-
-      const nextValue = alreadyCounted ? safeStoredValue : safeStoredValue + 1;
-
-      if (!alreadyCounted) {
-        localStorage.setItem(storageKey, String(nextValue));
-        sessionStorage.setItem(sessionKey, "1");
+    const ensureSessionId = () => {
+      const existingSessionId = sessionStorage.getItem(sessionIdKey);
+      if (existingSessionId) {
+        return existingSessionId;
       }
 
-      setViewCount(nextValue);
-    } catch {
+      const generatedSessionId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+      sessionStorage.setItem(sessionIdKey, generatedSessionId);
+      return generatedSessionId;
+    };
+
+    const updateSharedViewCount = async () => {
+      const response = await fetch("/api/views", {
+        cache: "no-store",
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to fetch views");
+      }
+
+      const data = (await response.json()) as { total: number };
+      setViewCount(data.total);
+    };
+
+    const startPollingFallback = () => {
+      if (pollingIntervalId !== null) {
+        return;
+      }
+
+      pollingIntervalId = window.setInterval(() => {
+        updateSharedViewCount().catch(() => {
+          // Keep the latest known value on intermittent network errors.
+        });
+      }, 10_000);
+    };
+
+    const stopPollingFallback = () => {
+      if (pollingIntervalId === null) {
+        return;
+      }
+
+      window.clearInterval(pollingIntervalId);
+      pollingIntervalId = null;
+    };
+
+    const countSessionOnce = async () => {
+      const sessionId = ensureSessionId();
+      const response = await fetch("/api/views", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sessionId }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to increment views");
+      }
+
+      const data = (await response.json()) as { total: number };
+      setViewCount(data.total);
+    };
+
+    countSessionOnce().catch(() => {
       setViewCount(0);
+    });
+
+    let eventSource: EventSource | null = null;
+
+    if (typeof EventSource !== "undefined") {
+      eventSource = new EventSource("/api/views/stream");
+
+      eventSource.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data) as { total?: number };
+          if (typeof data.total === "number") {
+            setViewCount(data.total);
+            stopPollingFallback();
+          }
+        } catch {
+          // Ignore malformed events.
+        }
+      };
+
+      eventSource.onerror = () => {
+        eventSource?.close();
+        eventSource = null;
+        startPollingFallback();
+      };
+    } else {
+      startPollingFallback();
     }
+
+    updateSharedViewCount().catch(() => {
+      // Keep latest values if initial sync fails right after session count.
+    });
+
+    return () => {
+      eventSource?.close();
+      stopPollingFallback();
+    };
   }, []);
 
+  const compactFormatter = new Intl.NumberFormat("it-IT", {
+    notation: "compact",
+    compactDisplay: "short",
+    maximumFractionDigits: 1,
+  });
+
   const formattedViewCount =
-    viewCount === null ? "..." : new Intl.NumberFormat("it-IT").format(viewCount);
+    viewCount === null ? "..." : compactFormatter.format(viewCount).toUpperCase();
+  const socialProofLabel = `${formattedViewCount} visualizzazioni totali`;
 
   const handleDownloadCv = () => {
     const link = document.createElement("a");
@@ -148,11 +244,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
-              className="w-fit px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-2"
+              className="w-fit px-4 py-2 rounded-full bg-white/5 border border-cyan-300/30 backdrop-blur-md flex items-center gap-2"
             >
-              <Eye size={16} className="text-cyan-400" />
-              <span className="text-sm text-gray-300 font-mono">
-                {formattedViewCount} visualizzazioni totali
+              <Eye size={16} className="text-cyan-300" />
+              <span className="text-sm text-cyan-100 font-semibold tracking-wide uppercase">
+                {socialProofLabel}
               </span>
             </motion.div>
           </div>
