@@ -3,31 +3,36 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import { Mail, Linkedin, Instagram, Youtube, Twitter, Twitch, Send, MapPin } from "lucide-react";
-
-// Fallback per icone non standard in Lucide React (simil-Telegram/TikTok se non presenti)
-// Nota: Tieni presente che Lucide React ha un set limitato di brand. 
-// Se queste icone mancano, puoi usare un'icona generica o un SVG personalizzato.
-// Qui uso icone standard dove possibile e SVG inline per brand specifici se necessario.
+import { Mail, Linkedin, Instagram, Youtube, Github, Twitch, Send, MapPin } from "lucide-react";
 
 const socialLinks = [
   { 
     name: "Instagram", 
     icon: <Instagram size={24} />, 
-    href: "https://instagram.com/tuousername",
-    color: "hover:text-pink-500"
+    href: "https://www.instagram.com/itss.chri",
+    color: "hover:text-pink-500",
+    isComingSoon: false
+  },
+  { 
+    name: "GitHub", 
+    icon: <Github size={24} />, 
+    href: "https://github.com/dauria-christian",
+    color: "hover:text-white",
+    isComingSoon: false
   },
   { 
     name: "YouTube", 
     icon: <Youtube size={24} />, 
-    href: "https://youtube.com/@tuocanale",
-    color: "hover:text-red-600"
+    href: "https://www.youtube.com/@callmechri",
+    color: "hover:text-red-600",
+    isComingSoon: false
   },
   { 
-    name: "Telegram", 
-    icon: <Send size={24} />, // Send è spesso usato per Telegram
-    href: "https://t.me/tuousername",
-    color: "hover:text-blue-400"
+    name: "LinkedIn", 
+    icon: <Linkedin size={24} />, 
+    href: "https://www.linkedin.com/in/christiandauria/",
+    color: "hover:text-blue-600",
+    isComingSoon: false
   },
   { 
     name: "TikTok", 
@@ -42,25 +47,28 @@ const socialLinks = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="lucide lucide-music" // Simula stile lucide
+        className="lucide lucide-music"
       >
         <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
       </svg>
     ), 
-    href: "https://tiktok.com/@tuousername",
-    color: "hover:text-pink-400"
+    href: "https://www.tiktok.com/@itsschri",
+    color: "hover:text-pink-400",
+    isComingSoon: false
   },
   { 
     name: "Twitch", 
     icon: <Twitch size={24} />, 
-    href: "https://twitch.tv/tuousername",
-    color: "hover:text-purple-500"
+    href: "#",
+    color: "hover:text-purple-500",
+    isComingSoon: true
   },
   { 
-    name: "LinkedIn", 
-    icon: <Linkedin size={24} />, 
-    href: "https://linkedin.com/in/tuoprofilo",
-    color: "hover:text-blue-600"
+    name: "Telegram", 
+    icon: <Send size={24} />,
+    href: "#",
+    color: "hover:text-blue-400",
+    isComingSoon: true
   }
 ];
 
@@ -152,10 +160,20 @@ export default function ContactSection() {
                             <a 
                                 key={social.name}
                                 href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gray-400 transition-all hover:bg-white/10 hover:scale-110 ${social.color}`}
-                                aria-label={social.name}
+                                target={social.isComingSoon ? undefined : "_blank"}
+                                rel={social.isComingSoon ? undefined : "noopener noreferrer"}
+                                onClick={(e) => {
+                                  if (social.isComingSoon) {
+                                    e.preventDefault();
+                                  }
+                                }}
+                                title={social.isComingSoon ? `${social.name} - in arrivo...` : social.name}
+                                className={`w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gray-400 transition-all ${
+                                  social.isComingSoon 
+                                    ? "opacity-60 cursor-not-allowed" 
+                                    : "hover:bg-white/10 hover:scale-110"
+                                } ${social.color}`}
+                                aria-label={social.isComingSoon ? `${social.name} - in arrivo` : social.name}
                             >
                                 {social.icon}
                             </a>

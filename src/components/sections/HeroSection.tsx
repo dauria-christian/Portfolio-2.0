@@ -328,44 +328,47 @@ export default function HeroSection() {
 
             <div className="flex gap-3 sm:gap-6 items-center flex-wrap">
               <a
-                href="#"
+                href="https://www.instagram.com/itss.chri"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-pink-500 transition-colors transform hover:scale-110"
+                title="Instagram"
               >
                 <Instagram size={24} />
               </a>
               <a
-                href="#"
+                href="https://github.com/dauria-christian"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors transform hover:scale-110"
+                title="GitHub"
               >
                 <Github size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/christiandauria/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 transition-colors transform hover:scale-110"
+                title="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@callmechri"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-600 transition-colors transform hover:scale-110"
+                title="YouTube"
               >
                 <Youtube size={24} />
               </a>
               <a
-                href="#"
-                className="text-gray-400 hover:text-purple-500 transition-colors transform hover:scale-110"
-              >
-                <Twitch size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110"
-              >
-                <Send size={24} />
-              </a>
-              <a
-                href="#"
+                href="https://www.tiktok.com/@itsschri"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-pink-400 transition-colors transform hover:scale-110"
+                title="TikTok"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -382,6 +385,20 @@ export default function HeroSection() {
                   <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
               </a>
+              <div className="flex items-center gap-4 ml-2 pl-2 border-l border-gray-600">
+                <div
+                  className="text-gray-400 hover:text-purple-500 transition-colors transform hover:scale-110 cursor-not-allowed opacity-60"
+                  title="Twitch - in arrivo..."
+                >
+                  <Twitch size={24} />
+                </div>
+                <div
+                  className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 cursor-not-allowed opacity-60"
+                  title="Telegram - in arrivo..."
+                >
+                  <Send size={24} />
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
