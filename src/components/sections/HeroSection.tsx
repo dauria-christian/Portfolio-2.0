@@ -65,6 +65,7 @@ const InteractiveButton = ({
 
 export default function HeroSection() {
   const [viewCount, setViewCount] = useState<number | null>(null);
+  const cvFileName = "cv-christian-dauria.pdf";
 
   useEffect(() => {
     let isMounted = true;
@@ -102,6 +103,15 @@ export default function HeroSection() {
 
   const formattedViewCount =
     viewCount === null ? "..." : new Intl.NumberFormat("it-IT").format(viewCount);
+
+  const handleDownloadCv = () => {
+    const link = document.createElement("a");
+    link.href = `/${cvFileName}`;
+    link.download = cvFileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center">
@@ -226,7 +236,7 @@ export default function HeroSection() {
                 Vedi Progetti <ArrowRight size={20} />
               </InteractiveButton>
 
-              <InteractiveButton>
+              <InteractiveButton onClick={handleDownloadCv}>
                 Scarica CV <Download size={20} />
               </InteractiveButton>
             </div>
