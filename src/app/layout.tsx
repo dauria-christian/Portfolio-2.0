@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Modern & Interactive",
+  title: {
+    default: "Christian D'Auria | Portfolio",
+    template: "%s | Christian D'Auria",
+  },
   description: "A modern, high-end personal portfolio website with 3D effects.",
 };
 
